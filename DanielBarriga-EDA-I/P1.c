@@ -4,6 +4,7 @@
 #define s scanf
 int main() {
     int i, j, x, y, A, T, opcion;
+    char tablero[8][8];
 do{
     p("Bienvenido al programa de ajedrez\n");
     p("Menú de opciones:\n");
@@ -35,7 +36,7 @@ do{
         p("Coordenadas inválidas. Saliendo...\n");
         return 0;
     }
-    p("Ha seleccionado la casilla (%d, %d)\n", x, y);
+    p("Ha seleccionado la casilla (%d, %d)\n", y, x);
     char tablero[8][8];
     for (i=1;i<9;i++) {
         for(j=1;j<9;j++) {
@@ -51,7 +52,7 @@ do{
                 if (abs(x - i) == abs(y - j)) {
                     tablero[i][j] = 'X';
                 }
-                 tablero[x][y] = (opcion == 1)?'A':'T';
+                 tablero[x][y] = 'A';
             }
         }
     } else{
@@ -60,7 +61,7 @@ do{
             tablero[x][i] = 'X';
             tablero[i][y] = 'X';
         }
-        tablero[x][y] = (opcion == 1)?'A':'T';
+        tablero[x][y] = 'T';
     }
     for(i=1;i<9;i++) {
         for (j=1;j<9;j++) {
